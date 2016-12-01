@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testHover</title>
+    <style>
+           .left div,.right div{
+               width:500px;
+               heigth:50px;
+               padding:5px;
+               margin:5px;
+               float:left;
+               border:1px solid #ccc;
+               background:#bfa;
+           }
+
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+      <h2>.focusin()method</h2>
+      <div class="left">
+          <div class="aaron1">
+              click focus:<input type="text">
+          </div>
+      </div>
+      <div class="right">
+          <div class="aaron2">
+              click focus and transmit element<input type="text">
+          </div>
+      </div>
+      <script type="text/javascript">
+          //input focus
+          //add a border for input
+          $("input:first").focusin(function () {
+              $(this).css("border",'3px solid blue')
+          })
+      </script>
+      <script type="text/javascript">
+          //transmit parameter of different function
+          function fn(e){
+              $(this).val(e.data)
+          }
+
+          function a(){
+              $("input:last").focusin('love you',fn)
+          }
+          a();
+      </script>
+
+</body>
+</html>
