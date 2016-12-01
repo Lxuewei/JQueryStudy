@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testHover</title>
+    <style>
+           .left div{
+               width:350px;
+               heigth:150px;
+               padding:5px;
+               margin:5px;
+               border:1px solid #ccc;
+               background:#bfa;
+           }
+           p{
+               height:50px;
+               border:1px solid red;
+               margin:30px;
+           }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+      <h2>hoverTest</h2>
+      <div class="left">
+          <div class="aaron1">
+              <p>触发hover事件</p>
+          </div>
+      </div>
+      <script type="text/javascript">
+          //
+          $("p").hover(function () {
+              $(this).css("background",'red');
+          },function () {
+              $(this).css("background",'blue');
+          })
+      </script>
+</body>
+</html>
