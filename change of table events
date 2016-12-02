@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+           .left div,.right div{
+               width:100%;
+               padding:5px;
+               margin:5px;
+               border:1px solid #ccc;
+           }
+           .left div{background: #bfa;}
+           .right div{background: yellow;}
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+      <h2>input,textarea and select</h2>
+      <div class="left">
+          <div class="aaron1">input:
+              <input name="input" class="target1" type="text" value="listener the change of input">
+          </div>
+          <div class="aaron2">select:
+              <select name="select" class="target2">
+                  <option value="option1" selected>Option1</option>
+                  <option value="option2">Option2</option>
+              </select>
+          </div>
+          <div class="aaron3">textarea:
+              <textarea name="textarea" class="target3" rows="3" cols="20">multi-line text input controls</textarea>
+          </div>
+      </div>
+
+      result output:
+      <div id="result"></div>
+      <script type="text/javascript">
+          $('.target1').change(function (e) {
+              $("#result").html(e.target.name + ":"+ e.target.value)
+          })
+
+          $('.target2').change(function (e) {
+              $("#result").html(e.target.name + ":"+ e.target.value)
+          })
+
+          $('.target3').change(function (e) {
+              $("#result").html(e.target.name + ":"+ e.target.value)
+          })
+      </script>
+      <script type="text/javascript">
+
+      </script>
+
+</body>
+</html>
