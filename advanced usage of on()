@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+           .left div,.right div{
+               width:500px;
+               height:100px;
+               padding:5px;
+               margin:5px;
+               border:1px solid #ccc;
+           }
+           em{font-weight: 100;
+              color:red;}
+           .left div{background: #bfa;}
+           .right div{background: yellow;}
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+      <h2>on event delegate</h2>
+      <div class="left">
+          <div class="aaron">
+              <a>click here!!!</a>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $('body').on('click','a',function (e) {
+              alert(e.target.textContent)
+          })
+      </script>
+      <script type="text/javascript">
+
+      </script>
+
+</body>
+</html>
