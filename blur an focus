@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testHover</title>
+    <style>
+           .left div,.right div{
+               width:500px;
+               heigth:50px;
+               padding:5px;
+               margin:5px;
+               border:1px solid #ccc;
+               background:#bfa;
+           }
+
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+      <h2>.focusin and blur</h2>
+      <div class="left">
+          <div class="aaron1">
+              click focus(no works):<input type="text">
+          </div>
+      </div>
+      <div class="right">
+          <div class="aaron2">
+              click focus andbubble<input type="text">
+          </div>
+      </div>
+      <script type="text/javascript">
+
+          $(".aaron1").blur(function () {
+              $(this).css("border",'3px solid blue')
+          })
+          $(".aaron2").focusin(function () {
+              $(this).find('input').val('冒泡捕获了focusin事件')
+          })
+      </script>
+
+      <h2>.focusout and blur</h2>
+      <div class="left">
+          <div class="aaron3">
+              lose focus(no works):<input type="text">
+          </div>
+      </div>
+      <div class="right">
+          <div class="aaron4">
+              lose focus andbbuble<input type="text">
+          </div>
+      </div>
+      <script type="text/javascript">
+
+          $(".aaron3").blur(function () {
+              $(this).css("border",'3px solid blue')
+          })
+          $(".aaron4").focusout(function () {
+              $(this).find('input').val('冒泡捕获了focusout事件')
+          })
+      </script>
+
+      <script type="text/javascript">
+
+      </script>
+
+</body>
+</html>
