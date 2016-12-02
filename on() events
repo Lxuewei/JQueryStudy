@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+           .left div,.right div{
+               width:500px;
+               height:100px;
+               padding:5px;
+               margin:5px;
+               border:1px solid #ccc;
+           }
+           em{font-weight: 100;
+              color:red;}
+           .left div{background: #bfa;}
+           .right div{background: yellow;}
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+      <h2>on events</h2>
+      <h4>test one</h4>
+      <div class="left">
+          点击触发:on('click',fn)
+          <div id="test1"></div>
+      </div>
+      <script type="text/javascript">
+          $("#test1").on('click',function (e) {
+              $(this).text('触发事件:' + e.type)
+          })
+      </script>
+
+      <h4>test two</h4>
+      <div class="left">
+          点击触发：on('mousedown mouseup')
+          <div id="test2"></div>
+      </div>
+      <script type="text/javascript">
+          $("#test2").on('mousedown mouseup',function (e) {
+              $(this).text('触发事件:' + e.type)
+          })
+      </script>
+
+      <h4>test three</h4>
+      <div class="right">
+          点击触发：on(mousedown:fn1,mouseup:fn2)
+          <div id="test3"></div>
+      </div>
+      <script type="text/javascript">
+          $("#test3").on({
+              mousedown:function (e) {
+              $(this).text('触发事件:' + e.type)
+              },mouseup:function(e) {
+              $(this).text('触发事件:'+ e.type)
+          }
+          })
+      </script>
+      <script type="text/javascript">
+
+      </script>
+
+</body>
+</html>
