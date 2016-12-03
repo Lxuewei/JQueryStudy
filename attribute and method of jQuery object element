@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>test</title>
+    <style>
+        .left div{
+            width: 500px;
+            height: 50%;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            background: #bbffaa;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<h2>effects and methods of object events</h2>
+<div class="left">
+    <div id="content">
+        outside div element<br>
+        <span style="background: silver">inside span element</span><br>
+        outside div element<br>
+    </div>
+    <div id="msg"></div>
+</div>
+<script type="text/javascript">
+    //bunding click events for <span> element
+    $("span").click(function () {
+        $("#msg").html($("#msg").html() + "<p>inside span element  to be click</p>")
+        event.stopPropagation();//prevents event bubbing,you have a try to see removed effects.
+    })
+    //bunding click events for the <div> element of content
+    $("#content").click(function () {
+        $("#msg").html($("#msg").html() + "<p>outside div element  to be click</p>")
+        event.stopPropagation();
+    })
+    //bunding click events for <body> element
+    $("body").click(function () {
+        $("#msg").html($("#msg").html() + "<p>body element to be click</p>")
+    })
+</script>
+</body>
+</html>
