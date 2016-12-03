@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>test</title>
+    <style>
+        .left{
+            width: 500px;
+            height: 100px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+        }
+        .left{
+            background: #bbffaa;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<h2>effects of JQuery object events</h2>
+<div class="left">
+    <ul>
+        <li>click:trigger one</li>
+        <li>click:trigger two</li>
+        <li>click:trigger three</li>
+        <li>click:trigger four</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    $("ul").on('click',function (e) {
+        alert("trigger content:" + e.target.textContent);
+    })
+</script>
+</body>
+
+</html>
