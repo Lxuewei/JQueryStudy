@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        .div1{
+            border:1px dotted #ccc;
+            background: #bbffaa;
+            text-align: center;
+            width: 400px;
+            height: 200px;
+            margin:auto;
+        }
+        .div1 .divp{
+            width: 200px;
+            height: 80px;
+            margin: auto;
+        }
+        p{
+            color:red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="div1">
+      <h2>fadeOut</h2>
+      <div class="divp">
+          <p>text test</p>
+          <p>google hahaha</p>
+      </div>
+      fadeOut effects:
+      <select id="animation">
+          <option value="1">fadeToggle()</option>
+          <option value="2">fadeToggle("slow")</option>
+          <option value="3">fadeToggle(3000)</option>
+          <option value="4">fadeToggle(1000,complete)</option>
+          <option value="5">fadeToggle(3000,"linear")</option>
+          <option value="6">fadeToggle(options)</option>
+      </select><br>
+      <input id="btnToggle" type="button" value="click to switch">
+
+</div>
+      <script type="text/javascript">
+
+          //button Toggle
+          $("#btnToggle").click(function () {
+              var v=$("#animation").val();
+              if(v=="1"){
+                  $("p").fadeToggle();
+              }else if(v=="2"){
+                  $("p").fadeToggle("slow");
+              }else if(v=="3"){
+                  $("p").fadeToggle(3000);
+              }else if(v=="4"){
+                  $("p").fadeToggle(5000,function () {
+                      alert("complete show!");
+                  });
+              }else if(v=="5"){
+                  $("p").fadeToggle(1000,"linear");
+              }else if(v=="6"){
+                  $("p").fadeToggle({
+                      duration:3000
+                  });
+              }
+          })
+      </script>
+</body>
+</html>
