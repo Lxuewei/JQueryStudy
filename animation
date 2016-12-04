@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        .div1{
+            border:1px dotted #ccc;
+            background: #bbffaa;
+            text-align: center;
+            width:80%;
+            height:50%;
+            margin:50px auto;
+        }
+        p{
+            color: red;
+        }
+        #aaron{
+            width:80%;
+            margin:auto;
+            background-color: yellow;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="div1">
+      <h2>animation</h2>
+          <p>google hahaha</p>
+      <div id="aaron">inner animation</div>
+      click to see effects:
+      <select id="animation">
+          <option value="1">animation one</option>
+          <option value="2">animation two</option>
+          <option value="3">animation three</option>
+          <option value="4">animation four</option>
+      </select>
+      <input id="btn" type="button" value="operate animation">
+
+</div>
+      <script type="text/javascript">
+          $("#btn").click(function () {
+              var v=$("#animation").val();
+              if(v=="1"){
+                  //px defaults
+                  $("#aaron").animate({
+                      width:300,
+                      height:300
+                  });
+              }else if(v=="2"){
+                  //add height 100px
+                  $("#aaron").animate({
+                      width:"+=10px",
+                      height:"+=10px"
+                  });
+              }else if(v=="3"){
+                  $("#aaron").animate({
+                      fontSize:"5em"
+                  },4000,function () {
+                      alert("the fontSize of animation complete!");
+                  })
+              }else if(v=="4"){
+                  //change parameter by toggle
+                  $("#aaron").animate({
+                      width:"toggle"
+                  });
+              }
+          })
+      </script>
+</body>
+</html>
