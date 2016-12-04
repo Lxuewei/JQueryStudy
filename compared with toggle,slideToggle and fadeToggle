@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        .div1{
+            border:1px dotted #ccc;
+            background: #bbffaa;
+            text-align: center;
+            width: 400px;
+            height: 200px;
+            margin:auto;
+        }
+        .div1 .divp{
+            width: 200px;
+            height: 80px;
+            margin: auto;
+        }
+        p{
+            color:red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="div1">
+      <h2>toggle , slideToggle and fadeToggle</h2>
+      <div class="divp">
+          <p>text test</p>
+          <p>google hahaha</p>
+      </div>
+      fadeOut effects:
+      <select id="animation">
+          <option value="1">toggle</option>
+          <option value="2">slideToggle</option>
+          <option value="3">fadeToggle</option>
+      </select><br>
+      <input id="btn" type="button" value="click to switch">
+
+</div>
+      <script type="text/javascript">
+          $("#btn").click(function () {
+              var v=$("#animation").val();
+              if(v=="1"){
+                  $("p").toggle(3000);
+              }else if(v=="2"){
+                  $("p").slideToggle(3000);
+              }else if(v=="3"){
+                  $("p").fadeToggle(3000,"linear");
+              }
+          });
+      </script>
+</body>
+</html>
