@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        .left div,.right div{
+            width: 500px;
+            height:100px;
+            padding:5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+        .left div{
+            background:#bfa;
+        }
+        .right div{
+            background: yellow;
+            display: none;
+        }
+
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+      <h2>slidedown</h2>
+      <div class="left">
+          <h4>test one</h4>
+          <div id="a1">hide-show</div>
+          <button class="button1">click sldedown to show animation</button>
+      </div>
+      <script type="text/javascript">
+          $(".button1").click(function () {
+              $("#a1").slideDown(3000)
+          });
+      </script>
+      <div class="right">
+          <h4>test two</h4>
+          <div id="a2">hide-show</div>
+          <button class="button2">click slidedown to callback</button>
+      </div>
+      <script type="text/javascript">
+          $(".button2").click(function () {
+              $("#a2").slideDown(3000,function () {
+                  alert("complete!")
+              })
+          })
+      </script>
+</body>
+</html>
