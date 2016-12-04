@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+           h2{text-align: center;}
+           .left{border: 1px solid red;
+               text-align: center;
+               margin: 50px;
+               padding: 20px;
+               background-color: #cccccc;
+           }
+           .left div{
+               width:500px;
+               height:50px;
+               padding:5px;
+               margin:5px;
+
+               border:1px solid #ccc;
+           }
+           .left div{background: #bfa;}
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+      <h2>hide</h2>
+      <div class="left">
+          <h4>test one</h4>
+          <div id="a1">hide operation</div>
+          <button class="button1">hide directe</button>
+          <script type="text/javascript">
+              //click button1 ,hide directly
+              $(".button1").click(function () {
+                  $("#a1").hide();
+              })
+          </script>
+
+          <h4>test two</h4>
+          <div id="a2">hide animation operation</div>
+          <button class="button2">hide animation operation</button>
+          <script type="text/javascript">
+              //hide with operation
+              $(".button2").click(function () {
+                  $("#a2").hide({
+                      duration:3000,
+                      complete:function () {
+                          alert("complete 3000ms animation")
+                      }
+                  })
+              })
+          </script>
+      </div>
+
+</body>
+</html>
