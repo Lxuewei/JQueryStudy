@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        .div1{
+            border:1px dotted #ccc;
+            background: #bbffaa;
+            text-align: center;
+            width: 400px;
+            height: 200px;
+            margin:auto;
+        }
+        .div1 .divp{
+            width: 200px;
+            height: 80px;
+            margin: auto;
+        }
+        p{
+            color:red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="div1">
+      <h2>fadeOut</h2>
+      <div class="divp">
+          <p>text test</p>
+          <p>google hahaha</p>
+      </div>
+      fadeOut effects:
+      <select id="animation">
+          <option value="1">fade...()</option>
+          <option value="2">fade...("slow")</option>
+          <option value="3">fade...(3000)</option>
+          <option value="4">fade...(1000,complete)</option>
+          <option value="5">fade...(3000,"linear")</option>
+          <option value="6">fade...(options)</option>
+      </select><br>
+      <input id="btnFadeOut" type="button" value="click to fadeOut">
+      <input id="btnFadein" type="button" value="click to fadeIn">
+</div>
+      <script type="text/javascript">
+          // button show
+          $("#btnFadein").click(function () {
+              var v1=$("#animation").val();
+              if(v1=="1"){
+                  $("p").fadeIn();
+              }else if(v1=="2"){
+                  $("p").fadeIn("slow");
+              }else if(v1=="3"){
+                  $("p").fadeIn(3000);
+              }else if(v1=="4"){
+                  $("p").fadeIn(5000,function () {
+                      alert("complete hide!");
+                  });
+              }else if(v1=="5"){
+                  $("p").fadeIn(1000,"linear");
+              }else if(v1=="6"){
+                  $("p").fadeIn({
+                      duration:3000
+                  });
+              }
+          });
+
+          //button hide
+          $("#btnFadeOut").click(function () {
+              var v=$("#animation").val();
+              if(v=="1"){
+                  $("p").fadeOut();
+              }else if(v=="2"){
+                  $("p").fadeOut("slow");
+              }else if(v=="3"){
+                  $("p").fadeOut(3000);
+              }else if(v=="4"){
+                  $("p").fadeOut(5000,function () {
+                      alert("complete show!");
+                  });
+              }else if(v=="5"){
+                  $("p").fadeOut(1000,"linear");
+              }else if(v=="6"){
+                  $("p").fadeOut({
+                      duration:3000
+                  });
+              }
+          })
+      </script>
+</body>
+</html>
