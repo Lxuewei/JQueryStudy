@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        .div1{
+            width: 600px;
+            height:120px;
+            text-align: center;
+            margin:40px auto;
+            background-color:#bfa;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="div1">
+    <h2>trim method</h2>
+    not handled
+    <input type="text" name="" id="result1" value=" leave space before and after ">
+    <input type="button" id="btn1" value="click to operate"><br>
+
+    trim handled
+    <input type="text" name="" id="result2" value=" leave space before and after ">
+    <input type="button" id="btn2" value="click to operate">
+</div>
+      <script type="text/javascript">
+          $("#btn1").click(function () {
+              alert("length:" + $("#result1").val().length)
+          });
+
+          $("#btn2").click(function () {
+              alert("length:"+$.trim($("#result2").val()).length);
+          })
+      </script>
+</body>
+</html>
