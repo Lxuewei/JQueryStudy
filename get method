@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>test</title>
+    <style>
+        .left{
+            width: 800px;
+            height: 300px;
+            padding: 5px;
+            margin: 20px;
+            text-align: center;
+            background-color: #bfa;
+        }
+        .left  #aaron{
+            margin: 20px 80px;
+            padding:10px;
+            background-color: yellow;
+            border-radius: 5px;
+        }
+        .left #animation,.left #btn{cursor: pointer;}
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="left">
+    <h2>get method</h2>
+    <div id="aaron">
+        <a>1</a>
+        <a>2</a>
+        <a>3</a>
+        <a>4</a>
+        <a>5</a>
+    </div>
+    <select id="animation">
+        <option value="1"> get positive number</option>
+        <option value="2"> get negative number</option>
+    </select>
+    <input id="btn" type="button" value="click operate">
+    </div>
+    <script type="text/javascript">
+        $("#btn").click(function () {
+            var v=$("#animation").val();
+            if(v=="1"){
+                $("#aaron a").get(1).style.color="red";
+            }else if(v=="2"){
+                $("#aaron a").get(-1).style.color="green";
+            }
+        })
+    </script>
+<script type="text/javascript">
+</script>
+</body>
+</html>
